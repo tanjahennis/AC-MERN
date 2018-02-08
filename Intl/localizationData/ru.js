@@ -1,13 +1,13 @@
 export default {
-  locale: 'fr',
+  locale: 'ru',
   messages: {
-    siteTitle: 'MERN blog de démarrage',
-    addPost: 'Ajouter Poster',
-    switchLanguage: 'Changer de langue',
-    twitterMessage: 'Nous sommes sur Twitter',
-    by: 'Par',
-    deletePost: 'Supprimer le message',
-    createNewPost: 'Créer un nouveau message',
+    siteTitle: 'Начальный блог MERN',
+    addPost: 'Добавить плакат',
+    switchLanguage: 'Изменить язык',
+    twitterMessage: 'Мы в Twitter',
+    by: 'по',
+    deletePost: 'Удалить сообщение',
+    createNewPost: 'Создать новое сообщение',
     authorName: 'Nom de l\'auteur',
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',
@@ -27,7 +27,5 @@ export default {
   		  =1 {has # comment}
   		  other {has # comments}
   		} as of {date} (in real app this would be translated to French)`,
-    productName: 'nom product',
-    dateAdded: 'addition date',
   },
 };
