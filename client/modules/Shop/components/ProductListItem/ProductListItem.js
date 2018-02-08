@@ -1,14 +1,14 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 
-function ProductListItem(props, context) {
-  return (
-    <div>
-      <h1>ProductListItem</h1>
-    </div>
-  );
+class ProductListItem extends Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.name}</h1>
+        <p>{this.props.dateAdded}</p>
+      </div>
+    );
+  }
 }
-
-ProductListItem.propTypes = {
-};
 
 export default ProductListItem;

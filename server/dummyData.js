@@ -1,4 +1,5 @@
 import Post from './models/post';
+import Shop from './models/shop'
 
 export default function () {
   Post.count().exec((err, count) => {
@@ -38,6 +39,21 @@ export default function () {
     const post2 = new Post({ name: 'Admin', title: 'Lorem Ipsum', slug: 'lorem-ipsum', cuid: 'cikqgkv4q01ck7453ualdn3hf', content: content2 });
 
     Post.create([post1, post2], (error) => {
+      if (!error) {
+        // console.log('ready to go....');
+      }
+    });
+  });
+
+  Shop.count().exec((err, count) => {
+    if (count > 0) {
+      return;
+    }
+
+    const product1 = new Shop({ name: 'Apple', dateAdded: '02-02-2018' });
+    const product2 = new Shop({ name: 'Fish', dateAdded: '01-01-2018' });
+
+    Shop.create([product1, product2], (error) => {
       if (!error) {
         // console.log('ready to go....');
       }

@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProductListItem from '../components/ProductListItem/ProductListItem'
+import ProductListItem from '../components/ProductListItem/ProductListItem';
+import { fetchProducts } from '../ShopActions';
 
 class ProductsPage extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(fetchProducts());
+  }
+
   render() {
     return (
       <div>
         <h1>HELLO</h1>
-        <ProductListItem />
+        {this.props.products.map((product) => (
+          <ProductListItem {...product} key={product._id} />
+        ))}
       </div>
     );
   }
 }
 
 // Retrieve data from store as props
-function mapStateToProps() {
+function mapStateToProps(state, props) {
   return {
+    products: state.shop.products,
   };
 }
 

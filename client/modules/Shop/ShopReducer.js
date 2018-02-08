@@ -1,11 +1,16 @@
 // Import Actions
-import {  } from './ShopActions';
+import { ADD_PRODUCTS } from './ShopActions';
 
 // Initial State
-const initialState = {};
+const initialState = {
+  products: [],
+};
 
 const ShopReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_PRODUCTS:
+      return { ...state, products: action.products }
+
     default:
       return state;
   }
