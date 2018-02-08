@@ -6,7 +6,9 @@ import { fetchProducts } from '../ShopActions';
 class ProductsPage extends Component {
 
   componentDidMount() {
-    this.props.dispatch(fetchProducts());
+    if (!this.props.initialLoadComplete) {
+      this.props.dispatch(fetchProducts());
+    }
   }
 
   render() {
@@ -20,6 +22,8 @@ class ProductsPage extends Component {
     );
   }
 }
+
+ProductsPage.need = [() => { return fetchProducts(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state, props) {

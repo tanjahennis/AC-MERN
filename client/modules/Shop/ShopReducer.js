@@ -4,12 +4,17 @@ import { ADD_PRODUCTS } from './ShopActions';
 // Initial State
 const initialState = {
   products: [],
+  initialLoadComplete: false,
 };
 
 const ShopReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCTS:
-      return { ...state, products: action.products }
+      return (
+        { ...state,
+        products: action.products,
+      initialLoadComplete: true }
+    );
 
     default:
       return state;

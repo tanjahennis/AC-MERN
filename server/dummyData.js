@@ -52,8 +52,16 @@ export default function () {
 
     const product1 = new Shop({ name: 'Apple', dateAdded: '02-02-2018' });
     const product2 = new Shop({ name: 'Fish', dateAdded: '01-01-2018' });
+    const product3 = new Shop({
+      name: {
+        defaultMessage: 'Skateboard',
+        translations: [
+          { language: 'fr', message: 'planche à roulette' },
+        ],
+      },
+    });
 
-    Shop.create([product1, product2], (error) => {
+    Shop.create([product1, product2, product3], (error) => {
       if (!error) {
         // console.log('ready to go....');
       }
